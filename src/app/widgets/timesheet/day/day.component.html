@@ -1,6 +1,6 @@
 <div class="day-container">
-  <p>{{day.getDay()}}</p>
-  <p>{{day.getDate()}}</p>
-  <p>{{hours}}</p>
+  <p [class.weekend-font]="calendarService.isWeekend(day)">{{day | date: 'EEE'}}</p>
+  <p [class.today-border]="calendarService.isToday(day)">{{day.getDate()}}</p>
+  <p>{{hoursWorked}}</p>
   <p>{{status}}</p>
 </div>

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CalendarService } from './calendar.service';
+import { CalendarService } from './calendar/calendar.service';
 
 @NgModule({
   declarations: [],

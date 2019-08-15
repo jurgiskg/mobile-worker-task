@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { CalendarService } from 'src/app/services/calendar/calendar.service';
 
 @Component({
   selector: 'app-day',
@@ -8,10 +9,10 @@ import { Component, OnInit, Input } from '@angular/core';
 export class DayComponent implements OnInit {
 
   @Input() day: Date;
-  @Input() hours: string;
+  @Input() hoursWorked: string;
   @Input() status: string;
 
-  constructor() { }
+  constructor(public calendarService: CalendarService) { }
 
   ngOnInit() {
   }
