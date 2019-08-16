@@ -3,12 +3,14 @@ import { CommonModule, DatePipe } from '@angular/common';
 import { TimesheetComponent } from './timesheet/timesheet.component';
 import { DayComponent } from './timesheet/day/day.component';
 import { SharedModule } from '../shared/shared.module';
-import { DayStatusDirective } from '../shared/directives/day-status.directive';
+import { HeaderComponent } from './timesheet/header/header.component';
+
 
 @NgModule({
   declarations: [
     TimesheetComponent,
-    DayComponent
+    DayComponent,
+    HeaderComponent
   ],
   imports: [
     CommonModule,
