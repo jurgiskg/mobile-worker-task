@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CalendarService } from './calendar/calendar.service';
+import { WorkEventService } from './work-event/work-event.service';
+import { TaskService } from './business-logic/task.service';
 
 @NgModule({
   declarations: [],
@@ -8,7 +10,9 @@ import { CalendarService } from './calendar/calendar.service';
     CommonModule
   ],
   exports: [
-    CalendarService
+    CalendarService,
+    WorkEventService,
+    TaskService
   ]
 })
 export class ServicesModule { }

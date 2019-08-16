@@ -1,0 +1,249 @@
+[
+  {
+    "date": "2019-08-09T18:25:43.511Z",
+    "events": [
+
+    ]
+  },
+  {
+    "date": "2019-08-10T18:25:43.511Z",
+    "events": [
+
+    ]
+  },
+  {
+    "date": "2019-08-11T18:25:43.511Z",
+    "events": [
+      {
+        "quantity": 2,
+        "price": 3,
+        "eventType": "expense",
+        "isExpenseType": true,
+        "isHoursEventType": false,
+        "isAdditionalHoursEventType": false,
+        "isWorkHour": false,
+        "isApproved": true,
+        "isRejected": false,
+        "tasksCount": 0,
+        "firstTaskStart": null,
+        "lastTaskEnd": null
+      },
+      {
+        "quantity": 0,
+        "price": 0,
+        "eventType": "hours",
+        "isExpenseType": false,
+        "isHoursEventType": true,
+        "isAdditionalHoursEventType": false,
+        "isWorkHour": true,
+        "isApproved": true,
+        "isRejected": false,
+        "tasksCount": 3,
+        "firstTaskStart": "2019-08-11T08:25:43.511Z",
+        "lastTaskEnd": "2019-08-11T15:00:43.511Z"
+      },
+      {
+        "quantity": 0,
+        "price": 0,
+        "eventType": "additionalHours",
+        "isExpenseType": false,
+        "isHoursEventType": false,
+        "isAdditionalHoursEventType": true,
+        "isWorkHour": false,
+        "isApproved": true,
+        "isRejected": false,
+        "tasksCount": 1,
+        "firstTaskStart": "2019-08-11T18:30:43.511Z",
+        "lastTaskEnd": "2019-08-11T18:40:43.511Z"
+      }
+    ]
+  },
+  {
+    "date": "2019-08-12T18:25:43.511Z",
+    "events": [
+      {
+        "quantity": 2,
+        "price": 3,
+        "eventType": "expense",
+        "isExpenseType": true,
+        "isHoursEventType": false,
+        "isAdditionalHoursEventType": false,
+        "isWorkHour": false,
+        "isApproved": true,
+        "isRejected": false,
+        "tasksCount": 0,
+        "firstTaskStart": null,
+        "lastTaskEnd": null
+      },
+      {
+        "quantity": 0,
+        "price": 0,
+        "eventType": "hours",
+        "isExpenseType": false,
+        "isHoursEventType": true,
+        "isAdditionalHoursEventType": false,
+        "isWorkHour": true,
+        "isApproved": true,
+        "isRejected": false,
+        "tasksCount": 3,
+        "firstTaskStart": "2019-08-12T08:25:43.511Z",
+        "lastTaskEnd": "2019-08-12T15:00:43.511Z"
+      },
+      {
+        "quantity": 0,
+        "price": 0,
+        "eventType": "additionalHours",
+        "isExpenseType": false,
+        "isHoursEventType": false,
+        "isAdditionalHoursEventType": true,
+        "isWorkHour": false,
+        "isApproved": true,
+        "isRejected": false,
+        "tasksCount": 1,
+        "firstTaskStart": "2019-08-12T18:30:43.511Z",
+        "lastTaskEnd": "2019-08-12T18:40:43.511Z"
+      }
+    ]
+  },
+  {
+    "date": "2019-08-13T18:25:43.511Z",
+    "events": [
+      {
+        "quantity": 2,
+        "price": 3,
+        "eventType": "expense",
+        "isExpenseType": true,
+        "isHoursEventType": false,
+        "isAdditionalHoursEventType": false,
+        "isWorkHour": false,
+        "isApproved": true,
+        "isRejected": false,
+        "tasksCount": 0,
+        "firstTaskStart": null,
+        "lastTaskEnd": null
+      },
+      {
+        "quantity": 0,
+        "price": 0,
+        "eventType": "hours",
+        "isExpenseType": false,
+        "isHoursEventType": true,
+        "isAdditionalHoursEventType": false,
+        "isWorkHour": true,
+        "isApproved": true,
+        "isRejected": false,
+        "tasksCount": 3,
+        "firstTaskStart": "2019-08-13T08:25:43.511Z",
+        "lastTaskEnd": "2019-08-13T12:00:43.511Z"
+      },
+      {
+        "quantity": 0,
+        "price": 0,
+        "eventType": "additionalHours",
+        "isExpenseType": false,
+        "isHoursEventType": false,
+        "isAdditionalHoursEventType": true,
+        "isWorkHour": false,
+        "isApproved": true,
+        "isRejected": false,
+        "tasksCount": 1,
+        "firstTaskStart": "2019-08-13T18:30:43.511Z",
+        "lastTaskEnd": "2019-08-13T18:40:43.511Z"
+      }
+    ]
+  },
+  {
+    "date": "2019-08-14T18:25:43.511Z",
+    "events": [
+      {
+        "quantity": 2,
+        "price": 3,
+        "eventType": "expense",
+        "isExpenseType": true,
+        "isHoursEventType": false,
+        "isAdditionalHoursEventType": false,
+        "isWorkHour": false,
+        "isApproved": true,
+        "isRejected": false,
+        "tasksCount": 0,
+        "firstTaskStart": null,
+        "lastTaskEnd": null
+      },
+      {
+        "quantity": 0,
+        "price": 0,
+        "eventType": "hours",
+        "isExpenseType": false,
+        "isHoursEventType": true,
+        "isAdditionalHoursEventType": false,
+        "isWorkHour": true,
+        "isApproved": true,
+        "isRejected": false,
+        "tasksCount": 3,
+        "firstTaskStart": "2019-08-14T08:25:43.511Z",
+        "lastTaskEnd": "2019-08-14T15:00:43.511Z"
+      },
+      {
+        "quantity": 0,
+        "price": 0,
+        "eventType": "additionalHours",
+        "isExpenseType": false,
+        "isHoursEventType": false,
+        "isAdditionalHoursEventType": true,
+        "isWorkHour": false,
+        "isApproved": true,
+        "isRejected": false,
+        "tasksCount": 1,
+        "firstTaskStart": "2019-08-14T18:30:43.511Z",
+        "lastTaskEnd": "2019-08-14T18:40:43.511Z"
+      }
+    ]
+  },
+  {
+    "date": "2019-08-15T18:25:43.511Z",
+    "events": [
+      {
+        "quantity": 2,
+        "price": 3,
+        "eventType": "expense",
+        "isExpenseType": true,
+        "isHoursEventType": false,
+        "isAdditionalHoursEventType": false,
+        "isWorkHour": false,
+        "isApproved": true,
+        "isRejected": false,
+        "tasksCount": 0,
+        "firstTaskStart": null,
+        "lastTaskEnd": null
+      },
+      {
+        "quantity": 0,
+        "price": 0,
+        "eventType": "hours",
+        "isExpenseType": false,
+        "isHoursEventType": true,
+        "isAdditionalHoursEventType": false,
+        "isWorkHour": true,
+        "isApproved": true,
+        "isRejected": false,
+        "tasksCount": 3,
+        "firstTaskStart": "2019-08-15T08:25:43.511Z",
+        "lastTaskEnd": "2019-08-15T15:00:43.511Z"
+      },
+      {
+        "quantity": 0,
+        "price": 0,
+        "eventType": "additionalHours",
+        "isExpenseType": false,
+        "isHoursEventType": false,
+        "isAdditionalHoursEventType": true,
+        "isWorkHour": false,
+        "isApproved": true,
+        "isRejected": false,
+        "tasksCount": 1,
+        "firstTaskStart": "2019-08-15T18:30:43.511Z",
+        "lastTaskEnd": "2019-08-15T18:40:43.511Z"
+      }
+    ]
+  }
+]

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CalendarService } from 'src/app/services/calendar/calendar.service';
+import { WorkEventService } from 'src/app/services/work-event/work-event.service';
+import { DayReport } from 'src/app/services/work-event/day-report';
 
 @Component({
   selector: 'app-timesheet',
@@ -8,12 +9,17 @@ import { CalendarService } from 'src/app/services/calendar/calendar.service';
 })
 export class TimesheetComponent implements OnInit {
 
-  currentWeek: Array<Date> = [];
+  weekReports: Array<DayReport>;
 
-  constructor(private calendarService: CalendarService) { }
+  constructor(private workEventService: WorkEventService) { }
 
   ngOnInit() {
-    this.currentWeek = this.calendarService.getCurrentTimesheetWeek();
+    const today = new Date();
+    const firstTimesheetDay = new Date(today.setDate(today.getDate() - 6));
+
+    this.workEventService.getWeekReports(firstTimesheetDay, today).subscribe(data => {
+      this.weekReports = data;
+    });
   }
 
 }
