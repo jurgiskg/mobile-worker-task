@@ -1,16 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DayStatusDirective } from './directives/day-status.directive';
+import { HoursWorkedPipe } from './pipes/hours-worked.pipe';
 
 @NgModule({
   declarations: [
-    DayStatusDirective
+    DayStatusDirective,
+    HoursWorkedPipe
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    DayStatusDirective
+    DayStatusDirective,
+    HoursWorkedPipe
   ]
 })
 export class SharedModule { }

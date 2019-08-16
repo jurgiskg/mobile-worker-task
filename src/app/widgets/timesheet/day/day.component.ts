@@ -10,7 +10,7 @@ import { DayStatus } from 'src/app/services/business-logic/day-status';
 export class DayComponent implements OnInit {
 
   @Input() day: Date;
-  @Input() hoursWorked: number;
+  @Input() minutesWorked: number;
   @Input() dayStatus: DayStatus;
 
   constructor(public calendarService: CalendarService) { }

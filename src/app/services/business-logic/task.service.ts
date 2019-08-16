@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { WorkEvent } from '../work-event/work-event';
 import { DayStatus } from './day-status';
+import { CalendarService } from '../calendar/calendar.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TaskService {
 
-  constructor() { }
+  constructor(private calendarService: CalendarService) { }
 
   getDayState = (dayEvents: Array<WorkEvent>): DayStatus => {
     if (dayEvents.length === 0) {
@@ -24,7 +25,7 @@ export class TaskService {
 
   getHoursWorked = (dayEvents: Array<WorkEvent>): number => {
     const hourSum = dayEvents.filter(e => e.isHoursEventType || e.isAdditionalHoursEventType)
-      .reduce((acc, curr) => acc + Math.abs(curr.firstTaskStart.getTime() - curr.lastTaskEnd.getTime()) / 36e5, 0);
+      .reduce((acc, curr) => acc + this.calendarService.getTwoDatesMinuteDifference(curr.firstTaskStart, curr.lastTaskEnd), 0);
 
     return hourSum;
   }

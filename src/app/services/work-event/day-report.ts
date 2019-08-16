@@ -3,7 +3,7 @@ import { DayStatus } from '../business-logic/day-status';
 
 export interface DayReport {
   date: Date;
-  hoursWorked: number;
+  minutesWorked: number;
   events: Array<WorkEvent>;
   status: DayStatus;
 }

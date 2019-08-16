@@ -28,7 +28,7 @@ export class WorkEventService {
       }))
       .pipe(map(response => {
         response.forEach(dayReport => {
-          dayReport.hoursWorked = this.taskService.getHoursWorked(dayReport.events);
+          dayReport.minutesWorked = this.taskService.getHoursWorked(dayReport.events);
           dayReport.status = this.taskService.getDayState(dayReport.events);
         });
         return response;

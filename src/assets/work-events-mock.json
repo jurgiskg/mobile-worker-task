@@ -227,8 +227,8 @@
         "isApproved": true,
         "isRejected": false,
         "tasksCount": 3,
-        "firstTaskStart": "2019-08-15T08:25:43.511Z",
-        "lastTaskEnd": "2019-08-15T15:00:43.511Z"
+        "firstTaskStart": "2019-08-15T08:00:00.511Z",
+        "lastTaskEnd": "2019-08-15T15:00:00.511Z"
       },
       {
         "quantity": 0,
@@ -242,7 +242,7 @@
         "isRejected": false,
         "tasksCount": 1,
         "firstTaskStart": "2019-08-15T18:30:43.511Z",
-        "lastTaskEnd": "2019-08-15T18:40:43.511Z"
+        "lastTaskEnd": "2019-08-15T19:00:43.511Z"
       }
     ]
   }
