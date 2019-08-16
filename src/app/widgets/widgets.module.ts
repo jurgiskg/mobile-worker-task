@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule, DatePipe } from '@angular/common';
 import { TimesheetComponent } from './timesheet/timesheet.component';
 import { DayComponent } from './timesheet/day/day.component';
+import { SharedModule } from '../shared/shared.module';
+import { DayStatusDirective } from '../shared/directives/day-status.directive';
 
 @NgModule({
   declarations: [
@@ -9,7 +11,8 @@ import { DayComponent } from './timesheet/day/day.component';
     DayComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule
   ],
   exports: [
     TimesheetComponent

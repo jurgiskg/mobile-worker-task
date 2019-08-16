@@ -131,7 +131,7 @@
         "isAdditionalHoursEventType": false,
         "isWorkHour": true,
         "isApproved": true,
-        "isRejected": false,
+        "isRejected": true,
         "tasksCount": 3,
         "firstTaskStart": "2019-08-13T08:25:43.511Z",
         "lastTaskEnd": "2019-08-13T12:00:43.511Z"
