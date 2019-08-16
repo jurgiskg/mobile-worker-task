@@ -15,7 +15,7 @@ export class DayStatusDirective implements OnInit {
 
   ngOnInit() {
     if (this.dayStatus === DayStatus.Unknown) {
-      this.hostElement.nativeElement.style.display = 'none';
+      this.hostElement.nativeElement.style.display = 'hidden';
     } else {
       const color = this.getStatusColor(this.dayStatus);
       this.hostElement.nativeElement.style.backgroundColor = color;

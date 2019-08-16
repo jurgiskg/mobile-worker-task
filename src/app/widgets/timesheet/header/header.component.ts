@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +7,9 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  @Output() todaySelected = new EventEmitter<Date>();
+  @Input() selectedDay: Date;
+
+  @Output() calendarIconSelected = new EventEmitter<Date>();
   today: Date = new Date();
 
   constructor() { }
@@ -16,7 +18,7 @@ export class HeaderComponent implements OnInit {
   }
 
   selectToday = () => {
-    this.todaySelected.emit(this.today);
+    this.calendarIconSelected.emit(this.today);
   }
 
 }
