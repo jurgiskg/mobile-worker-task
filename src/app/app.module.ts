@@ -7,10 +7,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WidgetsModule } from './widgets/widgets.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { AddTaskComponent } from './features/add-task/add-task.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AddTaskComponent
   ],
   imports: [
     BrowserModule,

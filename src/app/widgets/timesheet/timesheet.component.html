@@ -7,9 +7,9 @@
         (daySelected)=onSelectedDate($event)></app-day>
     </div>
   </div>
-  <div class="selected-day-container">
+  <div>
     <span>{{selectedDay | date: 'EEEE'}} {{selectedDay | date: 'dd.MM.yyyy'}}</span>
-    <button mat-button class="timesheet-button">GO TO TIMESHEET</button>
+    <button mat-button color="primary" class="timesheet-button">GO TO TIMESHEET</button>
   </div>
   <div class="tasks-container">
     <app-task-group icon="timelapse" title="Hours" taskAmountName="Duration"
@@ -18,5 +18,8 @@
     [workTasks]="expensesTasks" [taskGroupType]="workTaskTypes.Expenses"></app-task-group>
     <app-task-group icon="timelapse" title="Additional hours" taskAmountName="Amount"
     [workTasks]="additionalHourTasks" [taskGroupType]="workTaskTypes.AdditionalHours"></app-task-group>
+  </div>
+  <div>
+    <button mat-raised-button color="primary" class="add-task-button" routerLink="/add-task">ADD TASK</button>
   </div>
 </div>

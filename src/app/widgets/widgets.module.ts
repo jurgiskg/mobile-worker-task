@@ -7,6 +7,7 @@ import { HeaderComponent } from './timesheet/header/header.component';
 import { TaskGroupComponent } from './timesheet/task-group/task-group.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatButtonModule } from '@angular/material/button';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { MatButtonModule } from '@angular/material/button';
     CommonModule,
     SharedModule,
     FlexLayoutModule,
-    MatButtonModule
+    MatButtonModule,
+    RouterModule
   ],
   exports: [
     TimesheetComponent
