@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WorkEventService } from 'src/app/services/work-event/work-event.service';
-import { DayReport } from 'src/app/services/work-event/day-report';
+import { DayReport } from 'src/app/models/day-report';
 import { CalendarService } from 'src/app/services/calendar/calendar.service';
 
 @Component({

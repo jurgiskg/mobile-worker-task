@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { WorkEvent } from '../work-event/work-event';
-import { DayStatus } from './day-status';
+import { WorkEvent } from '../../models/work-event';
+import { DayStatus } from '../../models/day-status';
 import { CalendarService } from '../calendar/calendar.service';
 
 @Injectable({

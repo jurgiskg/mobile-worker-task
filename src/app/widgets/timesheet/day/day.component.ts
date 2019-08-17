@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CalendarService } from 'src/app/services/calendar/calendar.service';
-import { DayStatus } from 'src/app/services/business-logic/day-status';
+import { DayStatus } from 'src/app/models/day-status';
 
 @Component({
   selector: 'app-day',

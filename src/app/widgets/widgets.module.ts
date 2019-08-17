@@ -5,6 +5,7 @@ import { DayComponent } from './timesheet/day/day.component';
 import { SharedModule } from '../shared/shared.module';
 import { HeaderComponent } from './timesheet/header/header.component';
 import { TaskGroupComponent } from './timesheet/task-group/task-group.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { TaskGroupComponent } from './timesheet/task-group/task-group.component'
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    FlexLayoutModule
   ],
   exports: [
     TimesheetComponent

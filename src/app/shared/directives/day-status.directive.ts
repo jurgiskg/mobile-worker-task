@@ -1,5 +1,5 @@
 import { Directive, Input, ElementRef, OnInit } from '@angular/core';
-import { DayStatus } from 'src/app/services/business-logic/day-status';
+import { DayStatus } from 'src/app/models/day-status';
 
 @Directive({
   selector: '[appDayStatus]'

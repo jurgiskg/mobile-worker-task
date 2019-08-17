@@ -1,5 +1,5 @@
 import { WorkEvent } from './work-event';
-import { DayStatus } from '../business-logic/day-status';
+import { DayStatus } from './day-status';
 
 export interface DayReport {
   date: Date;
