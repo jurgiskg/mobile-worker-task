@@ -1,5 +1,7 @@
 <div class="timesheet-container">
-  <app-header (todaySelected)=onSelectedDate($event) [selectedDay]="selectedDay"></app-header>
+  <div class="header-container">
+    <app-header (calendarIconSelected)=onSelectedDate($event) [selectedDay]="selectedDay"></app-header>
+  </div>
   <div class="days-container">
     <div *ngFor="let dayReport of weekReports">
       <app-day [day]="dayReport.date" [minutesWorked]="dayReport.minutesWorked"

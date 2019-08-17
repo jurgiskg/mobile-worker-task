@@ -1,5 +1,14 @@
 .timesheet-container {
+  overflow: hidden;
+}
+
+.timesheet-container, .timesheet-container > div {
   width: 322px;
+  background-color: white;
+}
+
+.header-container {
+  margin-bottom: 15px;
 }
 
 .selected-day-container {
@@ -12,4 +21,11 @@
 
 .add-task-button {
   width: 100%;
+}
+
+.tasks-container {
+  height: 400px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding-right: 25px;
 }
