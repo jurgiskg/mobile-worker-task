@@ -10,7 +10,10 @@ export class HoursWorkedPipe implements PipeTransform {
       return '-';
     }
     const hours = Math.floor(value / 60);
-    const minutes = value % 60;
+    let minutes: string = (value % 60).toString();
+    if (minutes === '0') {
+      minutes = '00';
+    }
     return `${hours}:${minutes}`;
   }
 

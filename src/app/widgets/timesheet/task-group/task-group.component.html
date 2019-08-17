@@ -1,18 +1,29 @@
-<div class="group-container">
+<div *ngIf="workTasks.length !== 0" class="group-container">
   <div class="group-header">
     <i class="material-icons icon">{{icon}}</i>
     <span>&nbsp;&nbsp;{{title}}</span>
-    <span class="header-info">{{taskInformation}}</span>
+    <span *ngIf="taskGroupType == workTaskTypes.WorkHours" class="header-info">{{workStart | timeDuration: workEnd}}</span>
   </div>
-  <div fxLayout="row" fxLayoutAlign="space-between">
-    <div>
+  <div fxLayout="row">
+    <div fxFlex="40">
       <p class="gray-font">Type</p>
     </div>
-    <div>
-      <p class="gray-font">Quantity</p>
+    <div fxFlex="20">
+      <p class="gray-font">{{taskQuantityName}}</p>
     </div>
-    <div>
-      <p class="gray-font">Duration</p>
+    <div fxFlex="40" fxLayoutAlign="end end">
+      <p class="gray-font">{{taskAmountName}}</p>
+    </div>
+  </div>
+  <div fxLayout="row" *ngFor="let task of workTasks">
+    <div fxFlex="40">
+      <span>{{task.name}}</span>
+    </div>
+    <div fxFlex="20">
+      <span>{{task.quantity}}</span>
+    </div>
+    <div fxFlex="40" fxLayoutAlign="end end">
+      <span>{{taskGroupType === workTaskTypes.WorkHours ? (task.amount | hoursWorked) : (task.amount | number: '1.0-2')}}</span>
     </div>
   </div>
 </div>

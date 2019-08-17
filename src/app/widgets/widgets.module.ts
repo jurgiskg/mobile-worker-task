@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule, DatePipe } from '@angular/common';
+import { CommonModule, DatePipe, DecimalPipe } from '@angular/common';
 import { TimesheetComponent } from './timesheet/timesheet.component';
 import { DayComponent } from './timesheet/day/day.component';
 import { SharedModule } from '../shared/shared.module';
@@ -24,7 +24,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     TimesheetComponent
   ],
   providers: [
-    DatePipe
+    DatePipe,
+    DecimalPipe
   ]
 })
 export class WidgetsModule { }

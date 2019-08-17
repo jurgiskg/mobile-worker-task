@@ -1,11 +1,18 @@
 <div class="timesheet-container">
-  <!-- <app-header (todaySelected)=onSelectedDate($event) [selectedDay]="selectedDay"></app-header>
+  <app-header (todaySelected)=onSelectedDate($event) [selectedDay]="selectedDay"></app-header>
   <div class="days-container">
     <div *ngFor="let dayReport of weekReports">
       <app-day [day]="dayReport.date" [minutesWorked]="dayReport.minutesWorked"
         [dayStatus]="dayReport.status" [selectedTimesheetDay]="selectedDay"
         (daySelected)=onSelectedDate($event)></app-day>
     </div>
-  </div> -->
-  <app-task-group icon="timelapse" title="Hours" taskInformation="Test"></app-task-group>
+  </div>
+  <div class="tasks-container">
+    <app-task-group icon="timelapse" title="Hours" taskAmountName="Duration"
+    [workTasks]="workHourTasks" [taskGroupType]="workTaskTypes.WorkHours" [workStart]="workDayStart" [workEnd]="workDayEnd"></app-task-group>
+    <app-task-group icon="attach_money" title="Expenses" taskAmountName="Total" taskQuantityName="Quantity"
+    [workTasks]="expensesTasks" [taskGroupType]="workTaskTypes.Expenses"></app-task-group>
+    <app-task-group icon="timelapse" title="Additional hours" taskAmountName="Amount"
+    [workTasks]="additionalHourTasks" [taskGroupType]="workTaskTypes.AdditionalHours"></app-task-group>
+  </div>
 </div>
