@@ -1,4 +1,4 @@
-<div class="timesheet-container">
+<div class="timesheet-container mw-round-border">
   <div class="header-container">
     <app-header (calendarIconSelected)=onSelectedDate($event) [selectedDay]="selectedDay"></app-header>
   </div>
@@ -14,7 +14,7 @@
     <button mat-button color="primary" class="timesheet-button-padding">GO TO TIMESHEET</button>
   </div>
   <div class="tasks-container">
-    <app-task-group icon="timelapse" title="Hours" taskAmountName="Duration"
+    <app-task-group icon="access_time" title="Hours" taskAmountName="Duration"
     [workTasks]="workHourTasks" [taskGroupType]="workTaskTypes.WorkHours" [workStart]="workDayStart" [workEnd]="workDayEnd"></app-task-group>
     <app-task-group icon="attach_money" title="Expenses" taskAmountName="Total" taskQuantityName="Quantity"
     [workTasks]="expensesTasks" [taskGroupType]="workTaskTypes.Expenses"></app-task-group>

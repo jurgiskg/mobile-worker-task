@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 @mw-orange: #F08900;
+@mw-orange-hover: #f4b40045;
 @mw-gray: #f1f1f1;
 @mw-gray-font: gray;
 @mw-border-radius: 4px;
@@ -22,4 +23,21 @@ body {
 
 .medium-font {
   font-size: 14px;
+}
+
+.mw-round-border {
+  border-radius: @mw-border-radius;
+}
+
+.clickable-hover:hover {
+  border-radius: @mw-border-radius;
+  background-color: @mw-orange-hover;
+}
+
+.mat-primary:not(.mat-raised-button) {
+  color: @mw-orange;
+}
+
+.mat-raised-button {
+  background-color: @mw-orange;
 }
