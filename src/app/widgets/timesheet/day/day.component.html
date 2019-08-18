@@ -1,7 +1,8 @@
 <div class="day-container" (click)="selectDay()">
-  <p [class.weekend-font]="calendarService.isWeekend(day)">{{day | date: 'EEE'}}</p>
+  <p [class.weekend-font]="calendarService.isWeekend(day)" class="small-font">{{day | date: 'EEE'}}</p>
   <p [class.today-border]="calendarService.isToday(day)"
-    [class.selected-timesheet-day]="calendarService.isSameDay(day, selectedTimesheetDay)">{{day.getDate()}}</p>
-  <p>{{minutesWorked | hoursWorked}}</p>
-  <p><span [appDayStatus]="dayStatus" class="dot"></span></p>
+    [class.selected-timesheet-day]="calendarService.isSameDay(day, selectedTimesheetDay)"
+    class="month-day-number">{{day.getDate()}}</p>
+  <p class="small-font">{{minutesWorked | hoursWorked}}</p>
+  <p class="dot-container"><span [appDayStatus]="dayStatus" class="dot"></span></p>
 </div>
