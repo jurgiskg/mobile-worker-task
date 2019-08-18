@@ -1,5 +1,7 @@
 @import '../../../styles.less';
 
+@timesheet-widget-width: 322px;
+
 .timesheet-container {
   overflow: hidden;
   padding: 15px 15px 0px 15px;
@@ -10,8 +12,8 @@
   transform: translate(-50%, -50%);
 }
 
-.timesheet-container, .timesheet-container > div {
-  width: 322px;
+.timesheet-container, .timesheet-container > div, .timesheet-container .group-container {
+  width: @timesheet-widget-width;
   background-color: white;
 }
 

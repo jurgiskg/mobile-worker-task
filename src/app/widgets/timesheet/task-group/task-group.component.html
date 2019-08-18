@@ -2,17 +2,17 @@
   <div class="group-header mw-round-border">
     <i class="material-icons margin-left-5">{{icon}}</i>
     <span>&nbsp;&nbsp;{{title}}</span>
-    <span *ngIf="taskGroupType == workTaskTypes.WorkHours" class="header-info gray-font">{{workStart | timeDuration: workEnd}}</span>
+    <span *ngIf="taskGroupType == workTaskTypes.WorkHours" class="header-info mw-gray-font">{{workStart | timeDuration: workEnd}}</span>
   </div>
   <div fxLayout="row" class="medium-font">
     <div fxFlex="40">
-      <p class="gray-font margin-left-5">Type</p>
+      <p class="mw-gray-font margin-left-5">Type</p>
     </div>
     <div fxFlex="20">
-      <p class="gray-font">{{taskQuantityName}}</p>
+      <p class="mw-gray-font">{{taskQuantityName}}</p>
     </div>
     <div fxFlex="40" fxLayoutAlign="end end">
-      <p class="gray-font total-amount-margin">{{taskAmountName}}</p>
+      <p class="mw-gray-font total-amount-margin">{{taskAmountName}}</p>
     </div>
   </div>
   <div fxLayout="row" *ngFor="let task of workTasks" class="medium-font">

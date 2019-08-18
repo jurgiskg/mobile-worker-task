@@ -1,5 +1,5 @@
 <div class="day-container clickable-hover" (click)="selectDay()">
-  <p [class.weekend-font]="calendarService.isWeekend(day)" class="small-font">{{day | date: 'EEE'}}</p>
+  <p [class.mw-gray-font]="calendarService.isWeekend(day)" class="small-font">{{day | date: 'EEE'}}</p>
   <p [class.today-border]="calendarService.isToday(day)"
     [class.selected-timesheet-day]="calendarService.isSameDay(day, selectedTimesheetDay)"
     class="month-day-number mw-round-border">{{day.getDate()}}</p>
