@@ -2,8 +2,13 @@
 
 .timesheet-container {
   overflow: hidden;
-  padding: 15px;
-  margin: 0 auto;
+  padding: 15px 15px 0px 15px;
+  border: 2px solid #d2d2d2;
+  border-radius: @mw-border-radius;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .timesheet-container, .timesheet-container > div {
@@ -24,10 +29,6 @@
   display: block;
 }
 
-.timesheet-button {
-  float: right;
-}
-
 .add-task-button {
   width: 100%;
 }
@@ -37,4 +38,20 @@
   overflow-y: scroll;
   overflow-x: hidden;
   padding-right: 36px;
+  margin-bottom: 7px;
+}
+
+.timesheet-button-padding {
+  padding-right: 0px;
+}
+
+.day-button-container {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.add-task-button-container {
+  padding: 15px;
+  margin-left: -15px;
+  background-color: @mw-gray !important;
 }
