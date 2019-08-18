@@ -5,24 +5,24 @@
     <span *ngIf="taskGroupType == workTaskTypes.WorkHours" class="header-info mw-gray-font">{{workStart | timeDuration: workEnd}}</span>
   </div>
   <div fxLayout="row" class="medium-font">
-    <div fxFlex="40">
+    <div fxFlex="60">
       <p class="mw-gray-font margin-left-5">Type</p>
     </div>
     <div fxFlex="20">
       <p class="mw-gray-font">{{taskQuantityName}}</p>
     </div>
-    <div fxFlex="40" fxLayoutAlign="end end">
+    <div fxFlex="20" fxLayoutAlign="end end">
       <p class="mw-gray-font total-amount-margin">{{taskAmountName}}</p>
     </div>
   </div>
   <div fxLayout="row" *ngFor="let task of workTasks" class="medium-font">
-    <div fxFlex="40">
+    <div fxFlex="60">
       <span class="margin-left-5">{{task.name}}</span>
     </div>
     <div fxFlex="20">
       <span>{{task.quantity}}</span>
     </div>
-    <div fxFlex="40" fxLayoutAlign="end end">
+    <div fxFlex="20" fxLayoutAlign="end end">
       <span class="total-amount-margin">{{taskGroupType === workTaskTypes.WorkHours ? (task.amount | hoursWorked) : (task.amount | number: '1.0-2')}}</span>
     </div>
   </div>

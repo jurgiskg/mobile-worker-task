@@ -31,7 +31,7 @@ export class TimesheetComponent implements OnInit {
     const today = new Date();
     const firstTimesheetDay = new Date(new Date().setDate(new Date().getDate() - 6));
 
-    this.workEventService.getWeekReports(firstTimesheetDay, today).subscribe(data => {
+    this.workEventService.getLastWeekReports(firstTimesheetDay, today).subscribe(data => {
       this.weekReports = data;
       this.onSelectedDate(today);
     });
