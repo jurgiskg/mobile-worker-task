@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DayStatusDirective } from './directives/day-status.directive';
-import { HoursWorkedPipe } from './pipes/hours-worked.pipe';
+import { MinutesToHours } from './pipes/minutes-to-hours.pipe';
 import { MonthYearPipe } from './pipes/month-year.pipe';
 import { TimeDurationPipe } from './pipes/time-duration.pipe';
 
 @NgModule({
   declarations: [
     DayStatusDirective,
-    HoursWorkedPipe,
+    MinutesToHours,
     MonthYearPipe,
     TimeDurationPipe
   ],
@@ -17,7 +17,7 @@ import { TimeDurationPipe } from './pipes/time-duration.pipe';
   ],
   exports: [
     DayStatusDirective,
-    HoursWorkedPipe,
+    MinutesToHours,
     MonthYearPipe,
     TimeDurationPipe
   ]

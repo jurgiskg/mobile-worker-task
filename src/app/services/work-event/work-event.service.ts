@@ -17,7 +17,7 @@ export class WorkEventService {
 
   // filtering by startDate and endDate should be done by server
   getLastWeekReports = (startDate: Date, endDate: Date): Observable<Array<DayReport>> => {
-    return this.http.get<Array<DayReport>>('assets/work-events-mock.json')
+    return this.http.get<Array<DayReport>>('assets/data-mock.json')
       .pipe(map(response => {
         response.forEach(dayReport => {
           dayReport.date = new Date(dayReport.date);
@@ -28,15 +28,17 @@ export class WorkEventService {
         && this.calendarService.isLesserOrEqualDay(r.date, endDate))),
       map(response => {
         response.forEach(dayReport => {
-          dayReport.tasks.filter(t => t.isWorkHour).forEach(t => {
+          dayReport.firstTaskStart = new Date(dayReport.firstTaskStart);
+          dayReport.lastTaskEnd = new Date(dayReport.lastTaskEnd);
+          dayReport.tasks.forEach(t => {
             t.start = new Date(t.start);
             t.end = new Date(t.end);
-            t.events.filter(e => e.isHoursEventType || e.isAdditionalHoursEventType).forEach(e => {
+            t.events.filter(e => e.isWorkHour).forEach(e => {
               e.start = new Date(e.start);
               e.end = new Date(e.end);
             });
           });
-          dayReport.minutesWorked = this.taskService.getMinutesWorked(dayReport.tasks);
+          dayReport.minutesWorked = this.taskService.getDayMinutesWorked(dayReport.tasks);
           dayReport.status = this.taskService.getDayState(dayReport.tasks);
         });
         return response;

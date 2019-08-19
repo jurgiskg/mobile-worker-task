@@ -46,8 +46,9 @@ export class TimesheetComponent implements OnInit {
     this.additionalHourTasks = this.taskService.getTimesheetWorkEventsByType(currentReport.tasks, WorkEventType.AdditionalHours);
 
     if (currentReport.tasks.length !== 0) {
-      this.workDayStart = currentReport.firstTaskStart;
-      this.workDayEnd = currentReport.lastTaskEnd;
+      const workDayStartAndEnd = this.taskService.getMainWorkStartAndEnd(currentReport.tasks);
+      this.workDayStart = workDayStartAndEnd[0];
+      this.workDayEnd = workDayStartAndEnd[1];
     }
   }
 

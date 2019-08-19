@@ -27,18 +27,19 @@ export class TaskService {
     return DayStatus.Pending;
   }
 
-  getMinutesWorked = (dayTasks: Array<WorkTask>): number => {
-    const hourSum = dayTasks.filter(t => t.isWorkHour)
+  getDayMinutesWorked = (dayTasks: Array<WorkTask>): number => {
+    const dayEvents = this.getDayEventsFromTasks(dayTasks);
+    const mainWorkMinutes = dayEvents.filter(x => x.isHoursEventType)
       .reduce((acc, curr) => acc + this.calendarService.getTwoDatesMinuteDifference(curr.start, curr.end), 0);
 
-    return hourSum;
+    return mainWorkMinutes;
   }
 
   getTimesheetWorkEventsByType = (dayTasks: Array<WorkTask>, type: WorkEventType): Array<TimesheetWorkEvent> => {
+    const dayEvents = this.getDayEventsFromTasks(dayTasks);
     switch (type) {
       case WorkEventType.WorkHours:
-        const dayHourEvents: Array<WorkEvent> = dayTasks.filter(t => t.isWorkHour).reduce((acc, curr) => acc.concat(curr.events), []);
-        const mainWorkHourEvents: Array<TimesheetWorkEvent> = dayHourEvents.filter(e => e.isHoursEventType).map(e => {
+        const mainWorkHourEvents: Array<TimesheetWorkEvent> = dayEvents.filter(e => e.isHoursEventType).map(e => {
           return {
             name: e.eventType,
             amount: this.calendarService.getTwoDatesMinuteDifference(e.start, e.end)
@@ -47,7 +48,6 @@ export class TaskService {
         return mainWorkHourEvents;
 
       case WorkEventType.Expenses:
-        const dayEvents: Array<WorkEvent> = dayTasks.reduce((acc, curr) => acc.concat(curr.events), []);
         const expenseEvents: Array<TimesheetWorkEvent> = dayEvents.filter(e => e.isExpenseType).map(e => {
           return {
             name: e.eventType,
@@ -58,8 +58,7 @@ export class TaskService {
         return expenseEvents;
 
       case WorkEventType.AdditionalHours:
-        const daysHourEvents: Array<WorkEvent> = dayTasks.filter(t => t.isWorkHour).reduce((acc, curr) => acc.concat(curr.events), []);
-        const additionalWorkHourEvents: Array<TimesheetWorkEvent> = daysHourEvents.filter(e => e.isAdditionalHoursEventType).map(e => {
+        const additionalWorkHourEvents: Array<TimesheetWorkEvent> = dayEvents.filter(e => e.isAdditionalHoursEventType).map(e => {
           return {
             name: e.eventType,
             amount: this.calendarService.getTwoDatesMinuteDifference(e.start, e.end)
@@ -67,5 +66,17 @@ export class TaskService {
         });
         return additionalWorkHourEvents;
     }
+  }
+
+  getMainWorkStartAndEnd = (dayTasks: Array<WorkTask>): [Date, Date] => {
+    const dayMainWorkHourEvents = this.getDayEventsFromTasks(dayTasks).filter(e => e.isHoursEventType);
+    const start = new Date(Math.min.apply(null, dayMainWorkHourEvents.map(e => e.start)));
+    const end = new Date(Math.max.apply(null, dayMainWorkHourEvents.map(e => e.end)));
+
+    return [start, end];
+  }
+
+  private getDayEventsFromTasks = (dayTasks: Array<WorkTask>): Array<WorkEvent> => {
+    return dayTasks.reduce((acc, curr) => acc.concat(curr.events), []);
   }
 }

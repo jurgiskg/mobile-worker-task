@@ -22,8 +22,10 @@
     <div fxFlex="20">
       <span>{{task.quantity}}</span>
     </div>
-    <div fxFlex="20" fxLayoutAlign="end end">
-      <span class="total-amount-margin">{{taskGroupType === workTaskTypes.WorkHours ? (task.amount | hoursWorked) : (task.amount | number: '1.0-2')}}</span>
+    <div fxFlex="20" fxLayoutAlign="end end" [ngSwitch]="taskGroupType">
+      <span class="total-amount-margin" *ngSwitchCase="workTaskTypes.WorkHours">{{task.amount | minutesToHours: 'digitalClock'}}</span>
+      <span class="total-amount-margin" *ngSwitchCase="workTaskTypes.AdditionalHours">{{task.amount | minutesToHours: 'fraction'}}</span>
+      <span class="total-amount-margin" *ngSwitchCase="workTaskTypes.Expenses">{{task.amount | number: '1.2-2'}}</span>
     </div>
   </div>
 </div>

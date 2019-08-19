@@ -5,6 +5,7 @@ export interface WorkEvent {
   isExpenseType: boolean;
   isHoursEventType: boolean;
   isAdditionalHoursEventType: boolean;
-  start: Date;
-  end: Date;
+  isWorkHour: boolean;
+  start?: Date;
+  end?: Date;
 }

@@ -3,6 +3,6 @@
   <p [class.today-border]="calendarService.isToday(day)"
     [class.selected-timesheet-day]="calendarService.isSameDay(day, selectedTimesheetDay)"
     class="month-day-number mw-round-border">{{day.getDate()}}</p>
-  <p class="small-font">{{minutesWorked | hoursWorked}}</p>
+  <p class="small-font">{{minutesWorked | minutesToHours: 'digitalClock'}}</p>
   <p class="dot-container"><span [appDayStatus]="dayStatus" class="dot"></span></p>
 </div>
