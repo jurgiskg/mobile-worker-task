@@ -5,10 +5,6 @@ export interface WorkEvent {
   isExpenseType: boolean;
   isHoursEventType: boolean;
   isAdditionalHoursEventType: boolean;
-  isWorkHour: boolean;
-  isApproved: boolean;
-  isRejected: boolean;
-  tasksCount: number;
-  firstTaskStart: Date;
-  lastTaskEnd: Date;
+  start: Date;
+  end: Date;
 }

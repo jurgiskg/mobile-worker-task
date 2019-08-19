@@ -1,4 +1,4 @@
-export enum WorkTaskType {
+export enum WorkEventType {
   WorkHours,
   Expenses,
   AdditionalHours

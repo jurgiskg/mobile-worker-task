@@ -1,5 +1,10 @@
+import { WorkEvent } from './work-event';
+
 export interface WorkTask {
-  name: string;
-  quantity?: number;
-  amount: number;
+  events: Array<WorkEvent>;
+  start: Date;
+  end: Date;
+  isWorkHour: boolean;
+  isApproved: boolean;
+  isRejected: boolean;
 }

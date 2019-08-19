@@ -28,16 +28,18 @@ export class WorkEventService {
         && this.calendarService.isLesserOrEqualDay(r.date, endDate))),
       map(response => {
         response.forEach(dayReport => {
-          dayReport.events.forEach(event => {
-            event.firstTaskStart = new Date(event.firstTaskStart);
-            event.lastTaskEnd = new Date(event.lastTaskEnd);
+          dayReport.tasks.filter(t => t.isWorkHour).forEach(t => {
+            t.start = new Date(t.start);
+            t.end = new Date(t.end);
+            t.events.filter(e => e.isHoursEventType || e.isAdditionalHoursEventType).forEach(e => {
+              e.start = new Date(e.start);
+              e.end = new Date(e.end);
+            });
           });
-          dayReport.minutesWorked = this.taskService.getHoursWorked(dayReport.events);
-          dayReport.status = this.taskService.getDayState(dayReport.events);
+          dayReport.minutesWorked = this.taskService.getMinutesWorked(dayReport.tasks);
+          dayReport.status = this.taskService.getDayState(dayReport.tasks);
         });
         return response;
       }));
-
-
   }
 }

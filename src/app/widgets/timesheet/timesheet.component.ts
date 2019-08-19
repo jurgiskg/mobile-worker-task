@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { WorkEventService } from 'src/app/services/work-event/work-event.service';
 import { DayReport } from 'src/app/models/day-report';
 import { CalendarService } from 'src/app/services/calendar/calendar.service';
-import { WorkTask } from 'src/app/models/work-task';
+import { TimesheetWorkEvent } from 'src/app/models/timesheet-work-event';
 import { TaskService } from 'src/app/services/business-logic/task.service';
-import { WorkTaskType } from 'src/app/models/work-task-type';
+import { WorkEventType } from 'src/app/models/work-event-type';
 
 @Component({
   selector: 'app-timesheet',
@@ -15,13 +15,13 @@ export class TimesheetComponent implements OnInit {
 
   weekReports: Array<DayReport>;
   selectedDay: Date = new Date();
-  workHourTasks: Array<WorkTask> = [];
-  expensesTasks: Array<WorkTask> = [];
-  additionalHourTasks: Array<WorkTask> = [];
+  workHourTasks: Array<TimesheetWorkEvent> = [];
+  expensesTasks: Array<TimesheetWorkEvent> = [];
+  additionalHourTasks: Array<TimesheetWorkEvent> = [];
   workDayStart: Date;
   workDayEnd: Date;
 
-  workTaskTypes = WorkTaskType;
+  workTaskTypes = WorkEventType;
 
   constructor(private workEventService: WorkEventService,
               private taskService: TaskService,
@@ -41,14 +41,13 @@ export class TimesheetComponent implements OnInit {
     this.selectedDay = selectedDay;
     const currentReport = this.weekReports.find(r => this.calendarService.isSameDay(r.date, selectedDay));
 
-    this.workHourTasks = this.taskService.getWorkTasksByType(currentReport.events, WorkTaskType.WorkHours);
-    this.expensesTasks = this.taskService.getWorkTasksByType(currentReport.events, WorkTaskType.Expenses);
-    this.additionalHourTasks = this.taskService.getWorkTasksByType(currentReport.events, WorkTaskType.AdditionalHours);
+    this.workHourTasks = this.taskService.getTimesheetWorkEventsByType(currentReport.tasks, WorkEventType.WorkHours);
+    this.expensesTasks = this.taskService.getTimesheetWorkEventsByType(currentReport.tasks, WorkEventType.Expenses);
+    this.additionalHourTasks = this.taskService.getTimesheetWorkEventsByType(currentReport.tasks, WorkEventType.AdditionalHours);
 
-    if (this.workHourTasks.length !== 0) {
-      const workStartAndEnd = this.taskService.getWorkDayStartAndEnd(currentReport.events);
-      this.workDayStart = workStartAndEnd[0];
-      this.workDayEnd = workStartAndEnd[1];
+    if (currentReport.tasks.length !== 0) {
+      this.workDayStart = currentReport.firstTaskStart;
+      this.workDayEnd = currentReport.lastTaskEnd;
     }
   }
 

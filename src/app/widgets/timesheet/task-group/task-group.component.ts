@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { WorkTask } from 'src/app/models/work-task';
-import { WorkTaskType } from 'src/app/models/work-task-type';
+import { TimesheetWorkEvent } from 'src/app/models/timesheet-work-event';
+import { WorkEventType } from 'src/app/models/work-event-type';
 
 @Component({
   selector: 'app-task-group',
@@ -13,12 +13,12 @@ export class TaskGroupComponent implements OnInit {
   @Input() title: string;
   @Input() taskAmountName: string;
   @Input() taskQuantityName: string;
-  @Input() taskGroupType: WorkTaskType;
+  @Input() taskGroupType: WorkEventType;
   @Input() workStart: Date;
   @Input() workEnd: Date;
-  @Input() workTasks: Array<WorkTask> = [];
+  @Input() workTasks: Array<TimesheetWorkEvent> = [];
 
-  workTaskTypes = WorkTaskType;
+  workTaskTypes = WorkEventType;
 
   constructor() { }
 
