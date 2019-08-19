@@ -11,7 +11,7 @@
   </div>
   <div class="day-button-container" fxLayout="row" fxLayoutAlign="space-between center" fxali>
     <span>{{selectedDay | date: 'EEEE'}} {{selectedDay | date: 'dd.MM.yyyy'}}</span>
-    <button mat-button color="primary" class="timesheet-button-padding">GO TO TIMESHEET</button>
+    <button mat-button color="primary" class="timesheet-button-padding" routerLink="/timesheet-dummy">GO TO TIMESHEET</button>
   </div>
   <div class="tasks-container">
     <app-task-group icon="access_time" title="Hours" taskAmountName="Duration"

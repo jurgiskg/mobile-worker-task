@@ -8,11 +8,13 @@ import { WidgetsModule } from './widgets/widgets.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AddTaskComponent } from './features/add-task/add-task.component';
+import { TimesheetPageComponent } from './features/timesheet-page/timesheet-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AddTaskComponent
+    AddTaskComponent,
+    TimesheetPageComponent
   ],
   imports: [
     BrowserModule,
